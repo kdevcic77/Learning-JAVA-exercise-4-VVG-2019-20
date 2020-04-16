@@ -1,0 +1,164 @@
+2020-04-15 18:35:42,611 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 18:44:41,710 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 18:45:10,284 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 18:51:27,198 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 18:53:16,135 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 18:58:35,051 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 19:10:21,722 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 19:12:04,269 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 20:42:16,674 INFO [main] h.j.v.g.Glavna [Glavna.java:45] Pokretanje programa
+2020-04-15 20:51:15,771 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 20:53:50,937 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 20:55:22,338 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:00:05,460 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:02:52,909 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:14:34,323 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:23:20,655 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:24:56,147 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:26:38,465 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:43:40,691 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:44:10,602 ERROR [main] h.j.v.g.Glavna [Glavna.java:110] Cijena nekretnine ne smije biti manja od 10000kn
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Cijena nekretnine ne smije biti manja od 10000kn
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:13)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:24)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:108)
+2020-04-15 21:53:21,155 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:53:37,075 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 21:54:15,408 ERROR [main] h.j.v.g.Glavna [Glavna.java:110] Pogreška prilikom
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Cijena nekretnine ne smije biti manja od 10000kn
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:13)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:24)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:108)
+2020-04-15 22:07:52,851 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:08:34,887 ERROR [main] h.j.v.g.Glavna [Glavna.java:110] Non-terminating decimal expansion; no exact representable decimal result.
+java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result.
+	at java.base/java.math.BigDecimal.divide(BigDecimal.java:1722)
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:15)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:24)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:108)
+2020-04-15 22:09:29,488 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:14:16,693 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:14:22,571 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:15:40,255 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:15:48,558 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:16:53,628 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:24:37,308 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:31:33,362 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:34:04,988 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:37:08,688 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-15 22:47:12,484 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:04:57,045 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:07:08,773 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:09:22,231 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:12:00,195 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:13:42,967 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:29:28,838 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:30:34,492 ERROR [main] h.j.v.e.Stan [Stan.java:33] Cijena nekretnine ne smije biti manja od 10000 kn
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Cijena nekretnine ne smije biti manja od 10000 kn
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:14)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:30)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:107)
+2020-04-16 12:35:36,485 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:36:05,424 ERROR [main] h.j.v.e.Stan [Stan.java:35] Pogreška prilikom odreðivanja iznosa poreza!
+2020-04-16 12:42:49,823 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:43:16,352 ERROR [main] h.j.v.e.Stan [Stan.java:35] Pogreška prilikom odreðivanja iznosa poreza!
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Pogreška prilikom odreðivanja iznosa poreza!
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:14)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:32)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:107)
+2020-04-16 12:46:30,063 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 12:47:01,250 ERROR [main] h.j.v.e.Stan [Stan.java:35] Pogreška prilikom odreðivanja iznosa poreza!
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Pogreška prilikom odreðivanja iznosa poreza!
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:14)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:32)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:107)
+2020-04-16 12:53:20,620 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 13:03:04,757 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 13:03:28,662 ERROR [main] h.j.v.e.Stan [Stan.java:35] Cijena ne smije biti manja od 10000kn
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Cijena ne smije biti manja od 10000kn
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:14)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:32)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:107)
+2020-04-16 13:07:07,819 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 13:07:31,712 ERROR [main] h.j.v.e.Stan [Stan.java:35] Cijena ne smije biti manja od 10000kn
+2020-04-16 13:08:40,701 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 13:09:04,014 ERROR [main] h.j.v.e.Stan [Stan.java:35] Pogreška prilikom odreðivanja iznosa poreza!
+2020-04-16 13:12:05,405 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 13:12:43,257 ERROR [main] h.j.v.e.Stan [Stan.java:35] Cijena ne smije biti manja od 10000kn
+2020-04-16 13:15:15,310 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 13:15:41,184 ERROR [main] h.j.v.e.Stan [Stan.java:35] Pogreška prilikom odreðivanja iznosa poreza!
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Pogreška prilikom odreðivanja iznosa poreza!
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:14)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:32)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:107)
+2020-04-16 13:35:05,110 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 13:35:22,436 INFO [main] h.j.v.g.Glavna [Glavna.java:46] Pokretanje programa
+2020-04-16 13:36:10,599 ERROR [main] h.j.v.e.Automobil [Automobil.java:88] Pogreška prilikom odreðivanja cijene osiguranja!
+hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException: Pogreška prilikom odreðivanja cijene osiguranja!
+	at hr.java.vjezbe.entitet.Automobil.izracunajGrupuOsiguranja(Automobil.java:71)
+	at hr.java.vjezbe.entitet.Vozilo.izracunajCijenuOsiguranja(Vozilo.java:45)
+	at hr.java.vjezbe.entitet.Automobil.tekstOglasa(Automobil.java:85)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:107)
+2020-04-16 13:53:11,866 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 13:55:21,936 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:01:05,819 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:02:28,522 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:05:27,338 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:05:36,543 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:06:31,186 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:06:36,911 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:08:30,940 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:11:56,839 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:12:29,364 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:12:43,271 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:14:14,254 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:16:02,971 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:18:17,513 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:18:53,740 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:28:24,899 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:28:46,184 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:29:23,281 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:48:39,019 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:49:55,428 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:52:06,436 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:52:54,769 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 14:55:15,528 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:00:22,669 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:03:17,884 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:03:58,519 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:07:53,266 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:08:14,255 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:14:12,006 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:17:50,705 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:24:03,216 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:27:43,858 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:28:51,097 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:30:59,810 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:31:08,404 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:32:09,271 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:33:15,259 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:33:55,199 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:35:29,228 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:36:36,916 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:38:56,755 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:41:26,094 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:42:06,681 ERROR [main] h.j.v.e.Stan [Stan.java:35] Pogreška prilikom odreðivanja iznosa poreza!
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Pogreška prilikom odreðivanja iznosa poreza!
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:14)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:32)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:107)
+2020-04-16 18:47:01,141 INFO [main] h.j.v.g.Glavna [Glavna.java:47] Pokretanje programa
+2020-04-16 18:47:23,069 INFO [main] h.j.v.g.Glavna [Glavna.java:356] Pogreška prilikom unosa int tipa podatka
+2020-04-16 18:47:32,605 INFO [main] h.j.v.g.Glavna [Glavna.java:356] Pogreška prilikom unosa int tipa podatka
+2020-04-16 18:47:34,525 INFO [main] h.j.v.g.Glavna [Glavna.java:356] Pogreška prilikom unosa int tipa podatka
+2020-04-16 18:48:21,261 INFO [main] h.j.v.g.Glavna [Glavna.java:356] Pogreška prilikom unosa int tipa podatka
+2020-04-16 18:48:24,300 INFO [main] h.j.v.g.Glavna [Glavna.java:356] Pogreška prilikom unosa int tipa podatka
+2020-04-16 18:48:28,828 INFO [main] h.j.v.g.Glavna [Glavna.java:383] Pogreška prilikom unosa BigDecimal tipa podatka
+2020-04-16 18:48:39,916 INFO [main] h.j.v.g.Glavna [Glavna.java:356] Pogreška prilikom unosa int tipa podatka
+2020-04-16 18:48:46,155 INFO [main] h.j.v.g.Glavna [Glavna.java:356] Pogreška prilikom unosa int tipa podatka
+2020-04-16 18:48:51,852 INFO [main] h.j.v.g.Glavna [Glavna.java:356] Pogreška prilikom unosa int tipa podatka
+2020-04-16 18:48:54,113 ERROR [main] h.j.v.e.Stan [Stan.java:35] Pogreška prilikom odreðivanja iznosa poreza!
+hr.java.vjezbe.iznimke.CijenaJePreniskaException: Pogreška prilikom odreðivanja iznosa poreza!
+	at hr.java.vjezbe.entitet.Nekretnina.izracunajPorez(Nekretnina.java:14)
+	at hr.java.vjezbe.entitet.Stan.tekstOglasa(Stan.java:32)
+	at hr.java.vjezbe.glavna.Glavna.main(Glavna.java:107)
