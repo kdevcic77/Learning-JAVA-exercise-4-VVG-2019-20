@@ -3,8 +3,12 @@ package hr.java.vjezbe.glavna;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,7 +56,8 @@ public class Glavna {
 	System.out.print("Unesite broj korisnika koje želite unijeti: ");
 	int brojKorisnika = provjeriIntBroj(ucitavac);
 	ucitavac.nextLine();
-	Korisnik[] korisnici = new Korisnik[brojKorisnika];
+	List<Korisnik> listaKorisnika = new ArrayList<>(brojKorisnika);
+
 	for (int i = 0; i < brojKorisnika; i++) {
 	    System.out.println("Unesite tip " + (i + 1) + ". korisnika");
 	    int odabraniBrojTipaKorisnika = 0;
@@ -67,11 +72,11 @@ public class Glavna {
 
 	    if (odabraniBrojTipaKorisnika == 1) {
 
-		korisnici[i] = unesiPrivatnogKorisnika(ucitavac, i + 1);
+		listaKorisnika.add(unesiPrivatnogKorisnika(ucitavac, i + 1));
 	    }
 	    if (odabraniBrojTipaKorisnika == 2) {
 
-		korisnici[i] = unesiPoslovnogKorisnika(ucitavac, i + 1);
+		listaKorisnika.add(unesiPoslovnogKorisnika(ucitavac, i + 1));
 	    }
 
 	}
@@ -83,19 +88,17 @@ public class Glavna {
 	System.out.print("Unesite broj kategorija koje želite unijeti: ");
 	int brojKategorija = provjeriIntBroj(ucitavac);
 	ucitavac.nextLine();
-	Kategorija[] kategorije = new Kategorija[brojKategorija];
-
-	for (int k = 0; k < kategorije.length; k++) {
-	    kategorije[k] = unesiKategoriju(ucitavac, k);
+	List<Kategorija> listaKategorija = new ArrayList<>();
+	for (int k = 0; k < brojKategorija; k++) {
+	    listaKategorija.add(unesiKategoriju(ucitavac, k));
 
 	}
 	System.out.print("Unesite broj artikala koji su aktivno na prodaju: ");
 	int brojAktivnihOglasa = provjeriIntBroj(ucitavac);
 	ucitavac.nextLine();
-	Prodaja[] aktivneProdaje = new Prodaja[brojAktivnihOglasa];
-
-	for (int i = 0; i < aktivneProdaje.length; i++) {
-	    aktivneProdaje[i] = unesiProdaju(ucitavac, i, korisnici, kategorije);
+	List<Prodaja> listaProdaja = new ArrayList<>();
+	for (int i = 0; i < brojAktivnihOglasa; i++) {
+	    listaProdaja.add(unesiProdaju(ucitavac, i, listaKorisnika, listaKategorija));
 	}
 
 	ucitavac.close();
@@ -104,12 +107,12 @@ public class Glavna {
 	for (int j = 0; j < 100; j++) {
 	    System.out.print("-");
 	}
-	for (Prodaja aktivnaProdaja : aktivneProdaje) {
-	    System.out.print("\n" + aktivnaProdaja.getArtikl().tekstOglasa());
-	    LocalDate datumObjave = aktivnaProdaja.getDatumObjave();
+	for (Prodaja prodaja : listaProdaja) {
+	    System.out.print("\n" + prodaja.getArtikl().tekstOglasa());
+	    LocalDate datumObjave = prodaja.getDatumObjave();
 	    String datumObjaveString = datumObjave.format(DateTimeFormatter.ofPattern(FORMAT_DATUMA));
 	    System.out.println("\nDatum objave: " + datumObjaveString);
-	    System.out.println(aktivnaProdaja.getKorisnik().dohvatiKontakt());
+	    System.out.println(prodaja.getKorisnik().dohvatiKontakt());
 	    for (int j = 0; j < 100; j++) {
 		System.out.print("-");
 	    }
@@ -120,59 +123,73 @@ public class Glavna {
      * Kreira novi objekt prodaje artikla na temelju odabira korisnika, kategorije
      * oglasa kao i pripadajuæeg artikla kategorije
      * 
-     * @param ucitavac   omoguæava korisnièki unos, odnosno predstavlja Scanner
-     *                   objekt u obliku varijable koji u ovom sluèaju omoguæava
-     *                   korisnièki unos putem tipkovnice
-     * @param i          omoguæava prijenos cijelog broja kao parametra trenutnog
-     *                   indeksa polja u koji se sprema kreirani objekt prodaje
-     * @param korisnici  podaci o kreiranim korisnicimaa
-     * @param kategorije podaci o kreiranim kategorijama sa pripadajuæim artiklima
+     * @param ucitavac        omoguæava korisnièki unos, odnosno predstavlja Scanner
+     *                        objekt u obliku varijable koji u ovom sluèaju
+     *                        omoguæava korisnièki unos putem tipkovnice
+     * @param i               omoguæava prijenos cijelog broja kao parametra
+     *                        trenutnog indeksa polja u koji se sprema kreirani
+     *                        objekt prodaje
+     * @param listaKorisnika  podaci o kreiranim korisnicimaa
+     * @param listaKategorija podaci o kreiranim kategorijama sa pripadajuæim
+     *                        artiklima
      * @return vraæa novi objekt prodaje odn. oglas
      */
-    private static Prodaja unesiProdaju(Scanner ucitavac, int i, Korisnik[] korisnici, Kategorija[] kategorije) {
+    private static Prodaja unesiProdaju(Scanner ucitavac, int i, List<Korisnik> listaKorisnika,
+	    List<Kategorija> listaKategorija) {
 	Integer redniBrojKorisnika = 0;
 	System.out.println("Odaberite korisnika: ");
-	for (int j = 0; j < korisnici.length; j++) {
-	    System.out.println((j + 1) + ". " + korisnici[j].dohvatiKontakt());
-	}
-	System.out.print("Odabir korisnika >> ");
-	redniBrojKorisnika = provjeriIntBroj(ucitavac);
-	ucitavac.nextLine();
-	Korisnik odabraniKorisnik = korisnici[redniBrojKorisnika - 1];
+	int j = 0;
+	do {
+	    for (Korisnik korisnik : listaKorisnika) {
+		System.out.println((j + 1) + ". " + korisnik.dohvatiKontakt());
+		j++;
+	    }
+
+	    System.out.print("Odabir korisnika >> ");
+	    redniBrojKorisnika = provjeriIntBroj(ucitavac);
+	    ucitavac.nextLine();
+	} while (redniBrojKorisnika < 1 || redniBrojKorisnika > listaKorisnika.size());
+
+	Korisnik odabraniKorisnik = listaKorisnika.get(redniBrojKorisnika - 1);
 
 	Integer redniBrojKategorije = 0;
 	System.out.println("Odaberite kategoriju: ");
-	for (int j = 0; j < kategorije.length; j++) {
-	    System.out.println((j + 1) + ". " + kategorije[j].getNaziv());
+	j = 0;
+	for (Kategorija kategorija : listaKategorija) {
+	    System.out.println((j + 1) + ". " + kategorija.getNaziv());
+	    j++;
 	}
 	System.out.print("Odabir kategorije >> ");
 	redniBrojKategorije = provjeriIntBroj(ucitavac);
 	ucitavac.nextLine();
-	Kategorija odabranaKategorija = kategorije[redniBrojKategorije - 1];
+	Kategorija odabranaKategorija = listaKategorija.get(redniBrojKategorije - 1);
 
-	Artikl[] artikliKategorije = new Artikl[kategorije.length];
-	artikliKategorije = odabranaKategorija.getArtikli();
-	Integer redniBrojArtikla = 0;
-
+	Set<Artikl> setArtikalaKategorije = new HashSet<Artikl>();
+	setArtikalaKategorije = odabranaKategorija.getArtikli();
+	List<Artikl> listaArtikalaKategorije = new ArrayList<>(setArtikalaKategorije);
 	System.out.println("Odaberite artikl:");
-	for (int j = 0; j < odabranaKategorija.getArtikli().length; j++) {
-	    System.out.println((j + 1) + ". " + artikliKategorije[j].getNaslov());
+	Integer redniBrojArtikla = 0;
+	j = 0;
+	for (Artikl artikl : listaArtikalaKategorije) {
+	    System.out.println((j + 1) + ". " + artikl.getNaslov());
+	    j++;
 	}
 	System.out.print("Odabir artikla >> ");
 	redniBrojArtikla = provjeriIntBroj(ucitavac);
 	ucitavac.nextLine();
-	Artikl odabraniArtikl = artikliKategorije[redniBrojArtikla - 1];
-
+	Artikl odabraniArtikl = listaArtikalaKategorije.get(redniBrojArtikla - 1);
 	LocalDate datumObjave = LocalDate.now();
 	return new Prodaja(odabraniArtikl, odabraniKorisnik, datumObjave);
     }
 
-    /** Dodjeljivanje stanja artikla na temelju odabira korisnika iz enumeracije stanje
+    /**
+     * Dodjeljivanje stanja artikla na temelju odabira korisnika iz enumeracije
+     * stanje
      * 
      * @param ucitavac omoguæava korisnièki unos, odnosno predstavlja Scanner objekt
      *                 u obliku varijable koji u ovom sluèaju omoguæava korisnièki
      *                 unos putem tipkovnice
-     * @return vraæa odabrano stanje artikla 
+     * @return vraæa odabrano stanje artikla
      */
     private static Stanje unesiStanje(Scanner ucitavac) {
 	for (int i = 0; i < Stanje.values().length; i++) {
@@ -286,8 +303,8 @@ public class Glavna {
 	System.out.print("Unesite broj artikala koji želite unijeti za unesenu kategoriju: ");
 	int brojArtikalaKategorije = provjeriIntBroj(ucitavac);
 	ucitavac.nextLine();
-	Artikl[] artikliKategorije = new Artikl[brojArtikalaKategorije];
-	for (int j = 0; j < artikliKategorije.length; j++) {
+	Set<Artikl> artikliKategorije = new HashSet<>();
+	for (int j = 0; j < brojArtikalaKategorije; j++) {
 	    System.out.println("Unesite tip " + (j + 1) + ". artikla");
 	    int k = 0;
 	    do {
@@ -300,13 +317,13 @@ public class Glavna {
 		ucitavac.nextLine();
 	    } while (k != 1 && k != 2 && k != 3);
 	    if (k == 1) {
-		artikliKategorije[j] = unesiUslugu(ucitavac, j + 1);
+		artikliKategorije.add(unesiUslugu(ucitavac, j + 1));
 	    }
 	    if (k == 2) {
-		artikliKategorije[j] = unesiAutomobil(ucitavac, j + 1);
+		artikliKategorije.add(unesiAutomobil(ucitavac, j + 1));
 	    }
 	    if (k == 3) {
-		artikliKategorije[j] = unesiStan(ucitavac, j + 1);
+		artikliKategorije.add(unesiStan(ucitavac, j + 1));
 	    }
 	}
 	return new Kategorija(naziv, artikliKategorije);

@@ -26,7 +26,7 @@ public abstract class Artikl {
 	super();
 	this.naslov = naslov;
 	this.opis = opis;
-	this.stanje=stanje;
+	this.stanje = stanje;
 	this.cijena = cijena;
     }
 
@@ -68,7 +68,8 @@ public abstract class Artikl {
      */
     public abstract String tekstOglasa();
 
-    /**Ukoliko su dva objekta ista, njihov hash code mora biti isti
+    /**
+     * Ukoliko su dva objekta ista, njihov hash code mora biti isti
      *
      */
     @Override
@@ -82,7 +83,8 @@ public abstract class Artikl {
 	return result;
     }
 
-    /**Vraæa istinu jedino kada dve reference pokazuju na isti objekt
+    /**
+     * Vraæa istinu jedino kada dve reference pokazuju na isti objekt
      *
      */
     @Override
@@ -113,5 +115,5 @@ public abstract class Artikl {
 	    return false;
 	return true;
     }
-    
+
 }
