@@ -7,11 +7,11 @@ import org.slf4j.LoggerFactory;
 import hr.java.vjezbe.iznimke.CijenaJePreniskaException;
 
 /**
- * Predstavlja entitet stan koji je definiran naslovom , opisom, kvadraturom i
- * cijenom konjskim satima i cijenom
+ * Predstavlja entitet stan koji je definiran naslovom , opisom, kvadraturom, stanjem i
+ * cijenom
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class Stan extends Artikl implements Nekretnina {
 
@@ -22,11 +22,12 @@ public class Stan extends Artikl implements Nekretnina {
     /**
      * @param naslov     podatak o naslovu stana koji se prodaje
      * @param opis       podatak opisa stan
-     * @param kvadratura podatak o kvadratnim metrima stana
+     * @param kvadratura podatak o kvadraturi stana
+     * @param stanje     podatak o stanju nekretnine
      * @param cijena     podatak o cijeni stana
      */
-    public Stan(String naslov, String opis, int kvadratura, BigDecimal cijena) {
-	super(naslov, opis, cijena);
+    public Stan(String naslov, String opis, int kvadratura, Stanje stanje, BigDecimal cijena) {
+	super(naslov, opis, stanje, cijena);
 	this.kvadratura = kvadratura;
     }
 
@@ -39,7 +40,7 @@ public class Stan extends Artikl implements Nekretnina {
     }
 
     /**
-     * Pretvaranje pojedinaènih podataka o naslovu, opisu, kvadraturi, izraèunatom
+     * Pretvaranje pojedinaènih podataka o naslovu, opisu, kvadraturi, stanju, izraèunatom
      * porezu i cijeni stana u znakovni niz za lakše predstavljanje oglasa
      * automobila; u sluèaju premale cijene nekretnine, lovi se neoznaèena iznimka
      */
@@ -53,8 +54,8 @@ public class Stan extends Artikl implements Nekretnina {
 	    logger.error(e.getMessage(), e);
 	}
 	String tekstOglasa = ("Naslov nekretnine: " + getNaslov() + "\nOpis nekretnine: " + getOpis()
-		+ "\nKvadratura Nekretnine: " + getKvadratura() + "\nPorez na nekretnine: " + izracunatPorez
-		+ "\nCijena nekretnine " + getCijena());
+		+ "\nKvadratura Nekretnine: " + getKvadratura() + "\nStanje nekretnine: " + getStanje()
+		+ "\nPorez na nekretnine: " + izracunatPorez + "\nCijena nekretnine " + getCijena());
 	return tekstOglasa;
     }
 

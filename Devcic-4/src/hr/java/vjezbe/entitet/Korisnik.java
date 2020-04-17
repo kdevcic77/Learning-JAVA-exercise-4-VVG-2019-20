@@ -5,7 +5,7 @@ package hr.java.vjezbe.entitet;
  * korisnika
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public abstract class Korisnik {
 

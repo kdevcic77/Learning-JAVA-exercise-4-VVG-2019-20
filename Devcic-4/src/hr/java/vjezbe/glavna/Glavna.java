@@ -17,13 +17,14 @@ import hr.java.vjezbe.entitet.PoslovniKorisnik;
 import hr.java.vjezbe.entitet.PrivatniKorisnik;
 import hr.java.vjezbe.entitet.Prodaja;
 import hr.java.vjezbe.entitet.Stan;
+import hr.java.vjezbe.entitet.Stanje;
 import hr.java.vjezbe.entitet.Usluga;
 
 /**
  * Predstavlja programski dio koda koji služi za kreiranje i objavu oglasa
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class Glavna {
 
@@ -166,6 +167,29 @@ public class Glavna {
 	return new Prodaja(odabraniArtikl, odabraniKorisnik, datumObjave);
     }
 
+    /** Dodjeljivanje stanja artikla na temelju odabira korisnika iz enumeracije stanje
+     * 
+     * @param ucitavac omoguæava korisnièki unos, odnosno predstavlja Scanner objekt
+     *                 u obliku varijable koji u ovom sluèaju omoguæava korisnièki
+     *                 unos putem tipkovnice
+     * @return vraæa odabrano stanje artikla 
+     */
+    private static Stanje unesiStanje(Scanner ucitavac) {
+	for (int i = 0; i < Stanje.values().length; i++) {
+	    System.out.println((i + 1) + ". " + Stanje.values()[i]);
+	}
+	int odabraniRedniBrojStanja = 0;
+	while (true) {
+	    System.out.print("Odabir stanja artikla: ");
+	    odabraniRedniBrojStanja = provjeriIntBroj(ucitavac);
+	    if ((odabraniRedniBrojStanja >= 1) && (odabraniRedniBrojStanja < Stanje.values().length)) {
+		return Stanje.values()[odabraniRedniBrojStanja - 1];
+	    } else {
+		System.out.println("Neispravan unos!");
+	    }
+	}
+    }
+
     /**
      * Kreira novi objekt stan na temelju unosa sa tipkovnice
      * 
@@ -185,10 +209,11 @@ public class Glavna {
 	System.out.print("Unesite kvadraturu " + i + ". oglasa stana: ");
 	int kvadratura = provjeriIntBroj(ucitavac);
 	ucitavac.nextLine();
+	Stanje stanje = unesiStanje(ucitavac);
 	System.out.print("Unesite cijenu " + i + ". oglasa stana: ");
 	BigDecimal cijena = provjeriBigDecimalBroj(ucitavac);
 	ucitavac.nextLine();
-	return new Stan(naslov, opis, kvadratura, cijena);
+	return new Stan(naslov, opis, kvadratura, stanje, cijena);
 
     }
 
@@ -208,10 +233,11 @@ public class Glavna {
 	String naslov = ucitavac.nextLine();
 	System.out.print("Unesite opis " + i + ". oglasa usluge: ");
 	String opis = ucitavac.nextLine();
+	Stanje stanje = unesiStanje(ucitavac);
 	System.out.print("Unesite cijenu " + i + ". oglasa usluge: ");
 	BigDecimal cijena = provjeriBigDecimalBroj(ucitavac);
 	ucitavac.nextLine();
-	return new Usluga(naslov, opis, cijena);
+	return new Usluga(naslov, opis, stanje, cijena);
 
     }
 
@@ -234,10 +260,11 @@ public class Glavna {
 	System.out.print("Unesite snagu (u ks) " + i + ". oglasa automobila: ");
 	BigDecimal snagaKs = ucitavac.nextBigDecimal();
 	ucitavac.nextLine();
+	Stanje stanje = unesiStanje(ucitavac);
 	System.out.print("Unesite cijenu " + i + ". oglasa automobila: ");
 	BigDecimal cijena = provjeriBigDecimalBroj(ucitavac);
 	ucitavac.nextLine();
-	return new Automobil(naslov, opis, snagaKs, cijena);
+	return new Automobil(naslov, opis, snagaKs, stanje, cijena);
     }
 
     /**

@@ -5,7 +5,7 @@ package hr.java.vjezbe.iznimke;
  * oznaèenu iznimku u sluèaju kada se ne može odraditi cijena osiguranja
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class NemoguceOdreditiGrupuOsiguranjaException extends Exception {
 

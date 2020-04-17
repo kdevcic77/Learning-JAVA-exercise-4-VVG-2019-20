@@ -5,7 +5,7 @@ package hr.java.vjezbe.entitet;
  * email-om i brojem telefona
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class PrivatniKorisnik extends Korisnik {
 

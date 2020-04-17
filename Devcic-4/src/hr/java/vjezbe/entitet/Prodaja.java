@@ -7,7 +7,7 @@ import java.time.LocalDate;
  * korisnikom koji prodaje artikl i datumom objave prodaje artikla
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class Prodaja {
     private Artikl artikl;

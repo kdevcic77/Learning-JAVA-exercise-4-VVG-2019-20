@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
 import hr.java.vjezbe.iznimke.NemoguceOdreditiGrupuOsiguranjaException;
 
 /**
- * Predstavlja entitet vozila koji je definiran naslovom , opisom, snagom u
- * konjskim satima i cijenom
+ * Predstavlja entitet Autmobil koji je definiran naslovom , opisom, snagom u
+ * konjskim satima, stanjem i cijenom
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class Automobil extends Artikl implements Vozilo {
 
@@ -20,16 +20,17 @@ public class Automobil extends Artikl implements Vozilo {
     BigDecimal snagaKs;
 
     /**
-     * Inicijalizira podatak o naslovu, opisu, snazi u konjskim satima i cijeni
+     * Inicijalizira podatak o naslovu, opisu, snazi u konjskim satima, stanju i cijeni
      * automobila
      * 
      * @param naslov  - podatak o naslovu automobila
      * @param opis    - podatak o opisu automobila
      * @param snagaKs - podatak o snazi automobila u konjskim snagama
+     * @param stanje  - podatak o stanju automobila
      * @param cijena  - podatak o cijeni automobila
      */
-    public Automobil(String naslov, String opis, BigDecimal snagaKs, BigDecimal cijena) {
-	super(naslov, opis, cijena);
+    public Automobil(String naslov, String opis, BigDecimal snagaKs, Stanje stanje, BigDecimal cijena) {
+	super(naslov, opis, stanje, cijena);
 	this.snagaKs = snagaKs;
     }
 

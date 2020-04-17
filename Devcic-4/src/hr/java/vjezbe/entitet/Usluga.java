@@ -7,21 +7,21 @@ import java.math.BigDecimal;
  * cijenom usluge
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class Usluga extends Artikl {
 
     /**
-     * Inicijalizira entitet Usluga koji je definiran naslovom, opisom i cijenom
+     * Inicijalizira entitet Usluga koji je definiran naslovom, opisom, stanjem i cijenom
      * usluge
      * 
      * @param naslov - podatak o naslovu usluge
      * @param opis   - podatak o opisu usluge
+     * @param stanje - podatak o stanju
      * @param cijena - podatak o cijeni usluge
      */
-    public Usluga(String naslov, String opis, BigDecimal cijena) {
-	super(naslov, opis, cijena);
-
+    public Usluga(String naslov, String opis, Stanje stanje, BigDecimal cijena) {
+	super(naslov, opis, stanje, cijena);
     }
 
     /**

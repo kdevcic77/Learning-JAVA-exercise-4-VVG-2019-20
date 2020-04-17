@@ -5,7 +5,7 @@ package hr.java.vjezbe.iznimke;
  * iznimku u sluèaju kada je unešena cijena stana preniska
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class CijenaJePreniskaException extends RuntimeException {
 

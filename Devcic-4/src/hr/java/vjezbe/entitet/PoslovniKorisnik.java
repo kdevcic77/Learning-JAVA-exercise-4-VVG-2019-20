@@ -5,7 +5,7 @@ package hr.java.vjezbe.entitet;
  * brojem telefona i web stranicom
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class PoslovniKorisnik extends Korisnik {
     private String naziv;

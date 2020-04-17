@@ -5,7 +5,7 @@ package hr.java.vjezbe.entitet;
  * artiklima koje spadaju u tu kategoriju
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public class Kategorija {
     private String naziv;

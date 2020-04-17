@@ -10,7 +10,7 @@ import hr.java.vjezbe.iznimke.CijenaJePreniskaException;
  * implementirale zajednièku skupinu metoda
  * 
  * @author deva
- * @version Devcic-3
+ * @version Devcic-4
  */
 public interface Nekretnina {
 
