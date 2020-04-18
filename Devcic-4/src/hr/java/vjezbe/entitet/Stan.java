@@ -53,7 +53,7 @@ public class Stan extends Artikl implements Nekretnina {
 	    izracunatPorez = ("Cijena ne smije biti manja od 10000kn");
 	    logger.error(e.getMessage(), e);
 	}
-	String tekstOglasa = ("Naslov nekretnine: " + getNaslov() + "\nOpis nekretnine: " + getOpis()
+	String tekstOglasa = ("\nNaslov nekretnine: " + getNaslov() + "\nOpis nekretnine: " + getOpis()
 		+ "\nKvadratura Nekretnine: " + getKvadratura() + "\nStanje nekretnine: " + getStanje()
 		+ "\nPorez na nekretnine: " + izracunatPorez + "\nCijena nekretnine " + getCijena());
 	return tekstOglasa;

@@ -30,7 +30,7 @@ public class Usluga extends Artikl {
      */
     @Override
     public String tekstOglasa() {
-	String tekstOglasa = ("Naslov usluge: " + getNaslov() + "\nOpis usluge: " + getOpis() + "\nCijena usluge: "
+	String tekstOglasa = ("\nNaslov usluge: " + getNaslov() + "\nOpis usluge: " + getOpis() + "\nCijena usluge: "
 		+ getCijena());
 	return tekstOglasa;
     }

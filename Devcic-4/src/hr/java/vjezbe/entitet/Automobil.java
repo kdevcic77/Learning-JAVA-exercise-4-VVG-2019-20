@@ -92,7 +92,7 @@ public class Automobil extends Artikl implements Vozilo {
 	    izracunCijeneOsiguranja = ("Previše kw, ne mogu odrediti grupu osiguranja.");
 	    logger.error(e.getMessage(), e);
 	}
-	String tekstOglasa = ("Naslov automobila: " + getNaslov() + "\nOpis automobila: " + getOpis()
+	String tekstOglasa = ("\nNaslov automobila: " + getNaslov() + "\nOpis automobila: " + getOpis()
 		+ "\nSnaga automobila: " + getSnagaKs() + "\nCijena osiguranja " + izracunCijeneOsiguranja
 		+ "\nCijena automobila: " + getCijena());
 	return tekstOglasa;

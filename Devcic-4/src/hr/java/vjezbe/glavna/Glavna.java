@@ -4,11 +4,16 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +28,7 @@ import hr.java.vjezbe.entitet.Prodaja;
 import hr.java.vjezbe.entitet.Stan;
 import hr.java.vjezbe.entitet.Stanje;
 import hr.java.vjezbe.entitet.Usluga;
+import hr.java.vjezbe.sortiranje.ArtiklSorter;
 
 /**
  * Predstavlja programski dio koda koji služi za kreiranje i objavu oglasa
@@ -81,9 +87,8 @@ public class Glavna {
 
 	}
 
-	for (int j = 0; j < 100; j++) {
-	    System.out.print("-");
-	}
+	System.out.print(horizontalIsprekidanaLine());
+
 	System.out.println();
 	System.out.print("Unesite broj kategorija koje želite unijeti: ");
 	int brojKategorija = provjeriIntBroj(ucitavac);
@@ -93,6 +98,15 @@ public class Glavna {
 	    listaKategorija.add(unesiKategoriju(ucitavac, k));
 
 	}
+	Map<Kategorija, List<Artikl>> mapaArtikalaPoKategoriji = new HashMap<>();
+
+	for (Kategorija kategorija : listaKategorija) {
+	    Set<Artikl> setArtikalaKategorije = new HashSet<>();
+	    setArtikalaKategorije = kategorija.getArtikli();
+	    List<Artikl> listaArtikalaKategorije = new ArrayList<>(setArtikalaKategorije);
+	    mapaArtikalaPoKategoriji.put(kategorija, listaArtikalaKategorije);
+	}
+
 	System.out.print("Unesite broj artikala koji su aktivno na prodaju: ");
 	int brojAktivnihOglasa = provjeriIntBroj(ucitavac);
 	ucitavac.nextLine();
@@ -104,17 +118,34 @@ public class Glavna {
 	ucitavac.close();
 
 	System.out.println("Trenutno su oglasi na prodaju:");
-	for (int j = 0; j < 100; j++) {
-	    System.out.print("-");
-	}
+	System.out.print(horizontalIsprekidanaLine());
 	for (Prodaja prodaja : listaProdaja) {
 	    System.out.print("\n" + prodaja.getArtikl().tekstOglasa());
 	    LocalDate datumObjave = prodaja.getDatumObjave();
 	    String datumObjaveString = datumObjave.format(DateTimeFormatter.ofPattern(FORMAT_DATUMA));
 	    System.out.println("\nDatum objave: " + datumObjaveString);
 	    System.out.println(prodaja.getKorisnik().dohvatiKontakt());
-	    for (int j = 0; j < 100; j++) {
-		System.out.print("-");
+	    System.out.print(horizontalIsprekidanaLine());
+	}
+	System.out.println("\nIspis po kategorijama:");
+	for (Kategorija kategorija : listaKategorija) {
+	    System.out.print(horizontalIsprekidanaLine());
+	    System.out.println("\nKategorija: " + kategorija.getNaziv());
+	    Set<Artikl> artikliKategorije = new HashSet<>(kategorija.getArtikli());
+	    List<Artikl> listaArtikalaKategorije = new ArrayList<>(artikliKategorije);
+	    Collections.sort(listaArtikalaKategorije, new ArtiklSorter());
+	    for (Artikl artiklKategorije : listaArtikalaKategorije) {
+		System.out.print(horizontalIsprekidanaLine());
+		System.out.println(artiklKategorije.tekstOglasa());
+	    }
+	}
+	System.out.println("\nIspis mape:");
+	for (Kategorija key : mapaArtikalaPoKategoriji.keySet()) {
+	    System.out.print(horizontalIsprekidanaLine());
+	    System.out.println("\nKategorija: " + key.getNaziv());
+	    for (int i = 0; i < mapaArtikalaPoKategoriji.get(key).size(); i++) {
+		System.out.print(horizontalIsprekidanaLine());
+		System.out.println(mapaArtikalaPoKategoriji.get(key).get(i).tekstOglasa());
 	    }
 	}
     }
@@ -434,5 +465,17 @@ public class Glavna {
 	    }
 	} while (nastaviPetlju);
 	return cijeliBroj;
+    }
+
+    /**
+     * @return vraæa horizontalnu iscrtanu liniju za odjeljivanje bitnih dijelova
+     *         kod ispisa rezultata
+     */
+    private static String horizontalIsprekidanaLine() {
+	String isprekidanaLinija = "";
+	for (int j = 0; j < 100; j++) {
+	    isprekidanaLinija += "-";
+	}
+	return isprekidanaLinija;
     }
 }
