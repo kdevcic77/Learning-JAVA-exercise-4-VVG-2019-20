@@ -449,10 +449,10 @@ public class Glavna {
      */
     private static BigDecimal provjeriBigDecimalBroj(Scanner ucitavac) {
 	boolean nastaviPetlju = false;
-	BigDecimal cijeliBroj = new BigDecimal(0);
+	BigDecimal decimalniBroj = new BigDecimal(0);
 	do {
 	    try {
-		cijeliBroj = ucitavac.nextBigDecimal();
+		decimalniBroj = ucitavac.nextBigDecimal();
 		nastaviPetlju = false;
 	    } catch (InputMismatchException e) {
 		logger.info("Pogreška prilikom unosa BigDecimal tipa podatka");
@@ -462,7 +462,7 @@ public class Glavna {
 		nastaviPetlju = true;
 	    }
 	} while (nastaviPetlju);
-	return cijeliBroj;
+	return decimalniBroj;
     }
 
     /**
